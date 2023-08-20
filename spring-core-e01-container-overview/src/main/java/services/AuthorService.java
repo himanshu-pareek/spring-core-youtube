@@ -10,10 +10,6 @@ public class AuthorService {
         this.repository = repository;
     }
 
-    public AuthorRepository getRepository() {
-        return repository;
-    }
-
     @Override
     public String toString() {
         return "AuthorService{" +

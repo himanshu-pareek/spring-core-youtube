@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 1. Setter based injection -->
+    <bean class="services.AuthorService">
+
+        <!-- 1.1 Using `ref` element -->
+        <property name="authorRepository">
+            <ref bean="authorRepository" />
+        </property>
+
+        <!-- 1.2 Using `ref` attribute -->
+        <property name="emailService" ref="emailService" />
+
+        <!-- 1.3 Using `value` attribute -->
+        <property name="numberOfAuthors" value="20" />
+    </bean>
+
+    <bean id="authorRepository" class="repositories.AuthorRepository" />
+    <bean id="emailService" class="services.EmailService" />
+</beans>

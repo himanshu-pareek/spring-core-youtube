@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 3. Factory method based dependency injection -->
+    <bean class="services.AuthorService" factory-method="getInstance">
+        <constructor-arg ref="emailService" />
+        <constructor-arg value="20" />
+        <constructor-arg ref="authorRepository" />
+    </bean>
+
+    <bean id="authorRepository" class="repositories.AuthorRepository" />
+    <bean id="emailService" class="services.EmailService" />
+</beans>

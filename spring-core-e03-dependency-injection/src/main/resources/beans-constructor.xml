@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 2. Constructor based Dependency Injection -->
+    <bean class="services.AuthorService">
+
+        <!-- 1. Injecting value without specifying index / name -->
+        <constructor-arg value="20" />
+
+        <!-- 2. Injecting constructor argument using property name -->
+        <constructor-arg name="email-service" ref="emailService" />
+
+        <!-- 3. Injecting constructor argument using property index -->
+        <constructor-arg index="0">
+            <!-- And using ref element -->
+            <ref bean="authorRepository" />
+        </constructor-arg>
+    </bean>
+
+    <bean id="authorRepository" class="repositories.AuthorRepository" />
+    <bean id="emailService" class="services.EmailService" />
+</beans>

@@ -1,14 +1,13 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="authorRepository" class="repositories.AuthorRepository">
-        <property name="databaseUrl" value="localhost:mysql://localhost:3306" />
+        <property name="databaseUrl" value="jdbc:mysql://localhost" />
     </bean>
 
     <bean id="testAuthorRepository" class="repositories.AuthorRepository">
-        <property name="databaseUrl" value="testvalue" />
+        <property name="databaseUrl" value="test-url" />
     </bean>
-
 </beans>

@@ -3,10 +3,15 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!--    <bean class="services.AuthorService" />-->
-    
-<!--    <alias name="authorService" alias="authorService2" />-->
+<!--    1. Create bean using Constructor-->
+<!--    <bean id="authorService" name="authorService2, authorService3, authorService4" class="services.AuthorService" />-->
 
-    <bean class="services.AuthorService" factory-method="createInstance" />
+<!--    <alias name="authorService3" alias="authorService5" />-->
 
+<!--    2. Create bean using static factory method -->
+<!--    <bean class="services.AuthorService" factory-method="getInstance" />-->
+
+<!--    3. Create bean using instance factory method-->
+    <bean class="services.ServiceLocator" id="serviceLocator" />
+    <bean factory-bean="serviceLocator" factory-method="getAuthorService" />
 </beans>

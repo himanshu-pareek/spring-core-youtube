@@ -2,14 +2,12 @@ package services;
 
 public class AuthorService {
 
-    private static AuthorService authorService = new AuthorService();
-
-    private AuthorService () {
-
-    }
-
-    public static AuthorService createInstance() {
-        return authorService;
-    }
-
+//    private static AuthorService instance = new AuthorService();
+//
+//    public static AuthorService getInstance() {
+//        System.out.println(instance);
+//        return instance;
+//    }
+//
+//    private AuthorService() {}
 }

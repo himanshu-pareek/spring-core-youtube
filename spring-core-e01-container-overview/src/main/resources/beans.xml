@@ -5,5 +5,4 @@
 
     <import resource="repositories.xml" />
     <import resource="services.xml" />
-
 </beans>
