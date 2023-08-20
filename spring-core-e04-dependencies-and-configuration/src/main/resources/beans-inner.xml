@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean class="services.AuthorService">
+        <property name="repository">
+            <bean class="repositories.AuthorRepository">
+                <property name="tableName" value="" />
+                <property name="dataSource" ref="dataSource" />
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="dataSource" class="db.DataSource" />
+</beans>

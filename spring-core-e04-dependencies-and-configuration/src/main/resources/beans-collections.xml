@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 2. Collections -->
+    <bean class="demo.CollectionsDemo">
+        <property name="someStrings">
+            <list>
+                <value>String One</value>
+                <value>String Two</value>
+            </list>
+        </property>
+        <property name="someIntegers">
+            <set>
+                <value>20</value>
+                <value>100</value>
+                <value>20</value>
+            </set>
+        </property>
+        <property name="someEntries">
+            <map>
+                <entry key="key 1" value="1" />
+                <entry key="key 2" value="100" />
+            </map>
+        </property>
+        <property name="someProperties">
+            <props>
+                <prop key="name">Java Rush</prop>
+                <prop key="url">https://www.youtube.com/@java-rush</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
