@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    1. Lookup method injection-->
+<!--    <bean class="services.AuthorService">-->
+<!--        <lookup-method name="createAuthorRepository" bean="authorRepository" />-->
+<!--    </bean>-->
+<!--    <bean id="authorRepository" class="repositories.AuthorRepository" scope="prototype" />-->
+
+<!--    2. Arbitrary method replacement-->
+    <bean class="repositories.AuthorRepository" id="repository" scope="prototype" />
+
+    <bean class="services.AuthorService">
+        <replaced-method name="createAuthorRepository" replacer="replacementCreateAuthorRepository" />
+    </bean>
+
+    <bean class="repositories.ReplacementCreateAuthorRepository" id="replacementCreateAuthorRepository" />
+</beans>
