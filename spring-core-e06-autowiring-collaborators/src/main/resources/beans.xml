@@ -3,9 +3,20 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean class="services.AuthorService" autowire="byType" />
-    <bean class="repositories.AuthorRepository" />
-    <bean name="repository" class="repositories.AuthorRepository" />
-    <bean name="repository" class="services.EmailService" />
+    <bean id="repository" class="repositories.AuthorRepository" />
 
+    <!-- 1. Autowire by name -->
+    <bean class="services.AuthorService" autowire="byName" />
+
+    <!-- 2. Autowire by type -->
+<!--    <bean class="services.AuthorService" autowire="byName" />-->
+
+    <!-- 3. Autowire by constructor (same as by type but applies to constructor parameters) -->
+<!--    <bean class="services.AuthorService" autowire="constructor" />-->
+
+    <!-- Make a bean primary in case of multiple beans satisfying the criteria -->
+<!--    <bean class="repositories.AuthorRepository" primary="true" />-->
+
+    <!-- Make a bean not available for autowiring in to other beans -->
+<!--    <bean class="repositories.AuthorRepository" autowire-candidate="false" />-->
 </beans>

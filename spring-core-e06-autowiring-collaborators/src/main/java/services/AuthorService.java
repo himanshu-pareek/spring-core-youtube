@@ -2,22 +2,20 @@ package services;
 
 import repositories.AuthorRepository;
 
-import java.beans.ConstructorProperties;
-
 public class AuthorService {
 
     private AuthorRepository repository;
 
-    public AuthorService() {}
 
-    @ConstructorProperties({"repo"})
-    public AuthorService(AuthorRepository authorRepository) {
-        this.repository = authorRepository;
-    }
-
+    // 1 & 2. Autowire by name and type
     public void setRepository(AuthorRepository repository) {
         this.repository = repository;
     }
+
+    // 3. Autowire by constructor
+//    public AuthorService(AuthorRepository repository) {
+//        this.repository = repository;
+//    }
 
     @Override
     public String toString() {
